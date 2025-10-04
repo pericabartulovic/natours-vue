@@ -22,7 +22,6 @@ const tours = ref([]);
 
 onMounted(async () => {
   const res = await api.get('/tours');
-  console.log('ušao');
   tours.value = res.data.tours;
 });
 </script>

@@ -63,14 +63,8 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
 import { defineProps, computed } from 'vue';
 import { IMG_BASE_URL } from '@/config'
-
-
-onMounted(() =>{
-  console.log(IMG_BASE_URL);
-})
 
 const props = defineProps({
   tour: {
