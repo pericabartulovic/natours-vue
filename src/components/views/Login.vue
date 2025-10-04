@@ -5,11 +5,12 @@
       <form class="form form--login" @submit.prevent="onSubmit">
         <div class="form__group">
           <label class="form__label" for="email">Email address</label>
-          <input id="email" class="form__input" type="email" placeholder="you@example.com" v-model="email" required />
+          <input id="email" class="form__input" type="email" placeholder="sophie@example.com" v-model="email"
+            required />
         </div>
         <div class="form__group ma-bt-md">
           <label class="form__label" for="password">Password</label>
-          <input id="password" class="form__input" type="password" placeholder="••••••••" v-model="password" required
+          <input id="password" class="form__input" type="password" placeholder="test1234" v-model="password" required
             minlength="8" />
         </div>
         <div class="form__group form__group--actions">
