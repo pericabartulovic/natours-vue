@@ -8,7 +8,7 @@
       <template v-if="auth.isLoggedIn && auth.user">
         <router-link to="/users/me" class="nav__el">
           <!-- <img :src="`/img/users/${user.photo}`" :alt="`Photo of ${user.name}`" class="nav__user-img" /> -->
-          <img :src="`http://localhost:3000/img/users/${auth.user.photo}`" :alt="`Photo of ${auth.user.name}`"
+          <img :src="`${IMG_BASE_URL}/img/users/${auth.user.photo}`" :alt="`Photo of ${auth.user.name}`"
             class="nav__user-img" />
           <span>{{ auth.user.name.split(' ')[0] }}</span>
         </router-link>
@@ -29,6 +29,7 @@ import useAuthStore from '../stores/auth';
 import useAlertStore from '../stores/alerts';
 import { useRouter } from 'vue-router';
 import api from '@/api';
+import { IMG_BASE_URL } from '../config'; 
 
 const auth = useAuthStore();
 const alertStore = useAlertStore();

@@ -8,7 +8,7 @@
         <div class="header__hero">
           <div class="header__hero-overlay">&nbsp;</div>
           <!-- <img class="header__hero-img" :src="`/img/tours/${tour.imageCover}`" :alt="tour.name" /> -->
-          <img class="header__hero-img" :src="`http://localhost:3000/img/tours/${tour.imageCover}`" :alt="tour.name" />
+          <img class="header__hero-img" :src="`${IMG_BASE_URL}/img/tours/${tour.imageCover}`" :alt="tour.name" />
         </div>
         <div class="heading-box">
           <h1 class="heading-primary">
@@ -46,7 +46,7 @@
               <h2 class="heading-secondary ma-bt-lg">Your tour guides</h2>
               <div v-for="guide in tour.guides" :key="guide._id" class="overview-box__detail">
                 <!-- <img class="overview-box__img" :src="`/img/users/${guide.photo}`" :alt="guide.name" /> -->
-                <img class="overview-box__img" :src="`http://localhost:3000/img/users/${guide.photo}`"
+                <img class="overview-box__img" :src="`${IMG_BASE_URL}/img/users/${guide.photo}`"
                   :alt="guide.name" />
                 <span class="overview-box__label" v-if="guide.role === 'lead-guide'">Lead guide</span>
                 <span class="overview-box__label" v-else-if="guide.role === 'guide'">Tour guide</span>
@@ -65,7 +65,7 @@
       <section class="section-pictures">
         <div class="picture-box" v-for="(img, i) in tour.images" :key="img">
           <!-- <img class="picture-box__img" :src="`/img/tours/${img}`" :alt="`The Park Camper Tour ${i + 1}`" -->
-          <img class="picture-box__img" :src="`http://localhost:3000/img/tours/${img}`"
+          <img class="picture-box__img" :src="`${IMG_BASE_URL}/img/tours/${img}`"
             :alt="`The Park Camper Tour ${i + 1}`" :class="`picture-box__img--${i + 1}`" />
         </div>
       </section>
@@ -90,9 +90,9 @@
           </div>
           <!-- <img class="cta__img cta__img--1" :src="`/img/tours/${tour.images[1]}`" alt="Tour picture" />
           <img class="cta__img cta__img--2" :src="`/img/tours/${tour.images[2]}`" alt="Tour picture" /> -->
-          <img class="cta__img cta__img--1" :src="`http://localhost:3000/img/tours/${tour.images[1]}`"
+          <img class="cta__img cta__img--1" :src="`${IMG_BASE_URL}/img/tours/${tour.images[1]}`"
             alt="Tour picture" />
-          <img class="cta__img cta__img--2" :src="`http://localhost:3000/img/tours/${tour.images[2]}`"
+          <img class="cta__img cta__img--2" :src="`${IMG_BASE_URL}/img/tours/${tour.images[2]}`"
             alt="Tour picture" />
           <div class="cta__content">
             <h2 class="heading-secondary">What are you waiting for?</h2>
@@ -109,7 +109,8 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import api from '../../api'
+import api from '@/api'
+import { IMG_BASE_URL } from '@/config'
 import OverviewBox from '../OverviewBox.vue'
 import ReviewCard from '../ReviewCard.vue'
 import 'mapbox-gl/dist/mapbox-gl.css';

@@ -4,7 +4,7 @@
       <div class="card__picture">
         <div class="card__picture-overlay">&nbsp;</div>
         <!-- <img class="card__picture-img" :src="`/img/tours/${tour.imageCover}`" :alt="tour.name" /> -->
-        <img class="card__picture-img" :src="`http://localhost:3000/img/tours/${tour.imageCover}`" :alt="tour.name" />
+        <img class="card__picture-img" :src="`${IMG_BASE_URL}/img/tours/${tour.imageCover}`" :alt="tour.name" />
       </div>
       <h3 class="heading-tertirary">
         <span>{{ tour.name }}</span>
@@ -63,7 +63,14 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue';
 import { defineProps, computed } from 'vue';
+import { IMG_BASE_URL } from '@/config'
+
+
+onMounted(() =>{
+  console.log(IMG_BASE_URL);
+})
 
 const props = defineProps({
   tour: {

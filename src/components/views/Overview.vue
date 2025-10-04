@@ -15,13 +15,14 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import api from '../../api';
+import api from '@/api';
 import Card from '../Card.vue';
 
 const tours = ref([]);
 
 onMounted(async () => {
   const res = await api.get('/tours');
+  console.log('ušao');
   tours.value = res.data.tours;
 });
 </script>

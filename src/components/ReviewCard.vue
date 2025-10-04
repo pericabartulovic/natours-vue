@@ -2,7 +2,7 @@
   <div class="reviews__card">
     <div class="reviews__avatar">
       <!-- <img class="reviews__avatar-img" :src="`/img/users/${review.user.photo}`" :alt="review.user.name" /> -->
-      <img class="reviews__avatar-img" :src="`http://localhost:3000/img/users/${review.user.photo}`" :alt="review.user.name" />
+      <img class="reviews__avatar-img" :src="`${IMG_BASE_URL}/img/users/${review.user.photo}`" :alt="review.user.name" />
       <h6 class="reviews__user">{{ review.user.name }}</h6>
     </div>
     <p class="reviews__text">{{ review.review }}</p>
@@ -17,6 +17,7 @@
 
 <script setup>
 import { defineProps } from 'vue'
+import { IMG_BASE_URL } from '../config';
 
 const props = defineProps({
   review: { type: Object, required: true }
